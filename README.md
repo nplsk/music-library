@@ -101,13 +101,62 @@ A set of tools for displaying a local music library on a web interface.
 
 ---
 
+## Backend Setup
+
+The backend scripts require Python and some dependencies.
+
+1.  **Install Python**: Ensure you have Python 3.8+ installed.
+2.  **Install Dependencies**:
+    ```bash
+    cd backend
+    pip install -r requirements.txt
+    ```
+
+---
+
+## How to Import Your Library
+
+You can import your music library from a local folder or a Rekordbox XML export.
+
+### Option A: Scan a Music Folder
+To scan a directory of audio files (mp3, flac, wav, etc.):
+
+```bash
+python backend/import_library.py --music-dir "/path/to/your/music"
+```
+
+### Option B: Import from Rekordbox XML
+1.  Export your collection (or a playlist) from Rekordbox as XML.
+2.  Run the import script:
+
+```bash
+python backend/import_library.py --rekordbox-xml "/path/to/rekordbox.xml"
+```
+
+**Optional: Filter by Playlist**
+If you only want to import a specific playlist from the XML:
+
+```bash
+python backend/import_library.py --rekordbox-xml "/path/to/rekordbox.xml" --playlist "My Top Tracks"
+```
+
+---
+
 ## Frontend Setup
 
 The React app lives in the `/frontend` directory.
 
 ### Run the App
 
-```bash
-cd frontend
-npm install
-npm run dev
+1.  **Install Node Dependencies**:
+    ```bash
+    cd frontend
+    npm install
+    ```
+
+2.  **Start the Dev Server**:
+    ```bash
+    npm run dev
+    ```
+
+The app will be available at `http://localhost:5173` (or similar).

@@ -1,0 +1,6 @@
+mutagen
+tqdm
+requests
+youtube-search-python
+plotly
+matplotlib
